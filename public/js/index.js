@@ -9,11 +9,7 @@ socket.on('connect' , function () {
     text: "texting Client to Server Interaction"
   })
 
-socket.emit('createMessageEvent' , {
-
-  from: "Rahul Tiwari",
-  text: " Yeah Sure man, lets hangout sometimes"
-})
+socket.emit('createMessageEvent' , {}) //For telling Socket that we're emitting.
 
 
 

@@ -19,21 +19,27 @@ io.on('connection' , (socket)=>{
   console.log("New User Connected");
 
   socket.on('disconnect' , ()=>{
-    console.log("disconnected from client side");
+  console.log("disconnected from client side");
   });
 
-    socket.emit('newMessageEvent' , {
 
-      from: 'Kartik Aggarwal',
-      text: 'Hey, Rahul. Can we hang out today?',
-      createdAt: '9:70 PM'
-    })
 
 
 socket.on('createMessageEvent' , (incomingTextMessage)=>{
   console.log("Message Recieved " , incomingTextMessage);
-});
 
+  //Now, we want to notify everyone that a newMessage was received by the server.
+
+io.emit('newMessageEvent' , {
+
+  from: incomingTextMessage.from,
+  text: incomingTextMessage.text,
+  createdAt: new Date().getTime()
+
+    });
+
+
+});
 
 
   // socket.on('createEmail' , (clientServerEmailData)=>{
