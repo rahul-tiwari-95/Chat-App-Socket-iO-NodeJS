@@ -28,7 +28,6 @@ io.on('connection' , (socket)=>{
 socket.on('createMessageEvent' , (incomingTextMessage)=>{
   console.log("Message Recieved " , incomingTextMessage);
 
-  //Now, we want to notify everyone that a newMessage was received by the server.
 
 io.emit('newMessageEvent' , {
 
