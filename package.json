@@ -7,12 +7,13 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node servers/server.js"
   },
-  "engines":{
-      "node": "8.11.1"
+  "engines": {
+    "node": "8.11.1"
   },
   "author": "Rahul Tiwari",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.3"
+    "express": "^4.16.3",
+    "socket.io": "^2.1.1"
   }
 }
