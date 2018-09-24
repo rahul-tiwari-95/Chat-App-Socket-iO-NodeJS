@@ -4,31 +4,39 @@ var socket = io();
 socket.on('connect' , function () {
   console.log("Connected to Server");
 
-  socket.emit('createEmail' , {
-    to: "iamrahul_95@outlook.com",
-    text: "texting Client to Server Interaction"
-  })
-
-socket.emit('createMessageEvent' , {}) //For telling Socket that we're emitting.
-
-
 
 })
+
 
 socket.on('disconnect' , function () {
   console.log("disconnected from server");
 })
 
-
-socket.on('newEmail' , function (emailData){
-
-  console.log("New Email Notification" , emailData);
-})
+// socket.emit('createMessageEvent'  , (callbackData)=>{
+//   console.log(callbackData);
+// }) //For telling Socket that we're emitting.
 
 socket.on('newMessageEvent' , function (messageData){
-
-
   console.log("New Message Details: " , messageData);
+
+  var li = jQuery('<li></li>');
+  li.text(`${messageData.from}: ${messageData.text} `);
+
+  jQuery('#messages').append(li);
+})
+
+
+
+
+jQuery('#message-form').on('submit' , function(event){
+  event.preventDefault();
+
+  socket.emit('createMessageEvent' , {
+    from: 'User 1',
+    text: jQuery('[name=message]').val()
+  } , (data)=>{
+    console.log(data);
+  })
 })
 
 

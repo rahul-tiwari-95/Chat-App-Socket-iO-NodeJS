@@ -3,6 +3,8 @@ var express = require('express');
 const http = require('http');
 const socketIO = require('socket.io');
 
+var {generateMessage} =require('./utils/message.js')
+
 const publicPath = path.join(__dirname , '../public');
 
 var app = express();
@@ -25,17 +27,13 @@ io.on('connection' , (socket)=>{
 
 
 
-socket.on('createMessageEvent' , (incomingTextMessage)=>{
+socket.on('createMessageEvent' , (incomingTextMessage )=>{
   console.log("Message Recieved " , incomingTextMessage);
 
 
-io.emit('newMessageEvent' , {
 
-  from: incomingTextMessage.from,
-  text: incomingTextMessage.text,
-  createdAt: new Date().getTime()
 
-    });
+io.emit('newMessageEvent' , generateMessage(incomingTextMessage.from , incomingTextMessage.text));
 
 
 });
