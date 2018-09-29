@@ -3,7 +3,7 @@ var express = require('express');
 const http = require('http');
 const socketIO = require('socket.io');
 
-var {generateMessage} =require('./utils/message.js')
+var {generateMessage , generateLocationMessage} =require('./utils/message.js')
 
 const publicPath = path.join(__dirname , '../public');
 
@@ -37,6 +37,14 @@ io.emit('newMessageEvent' , generateMessage(incomingTextMessage.from , incomingT
 
 
 });
+
+socket.on("createLocationMessage" ,(incomingGeoData)=>{
+  console.log("Location Received " , incomingGeoData);
+  io.emit('newLocationEvent' , generateLocationMessage('CONNECT GOOGLE S5' , incomingGeoData.latitude , incomingGeoData.longitude));
+
+  //comment the geolocation data to
+
+})
 
 
   // socket.on('createEmail' , (clientServerEmailData)=>{
