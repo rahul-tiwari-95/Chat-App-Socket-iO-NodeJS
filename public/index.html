@@ -2,23 +2,33 @@
 
 <html>
   <head>
+      <link rel="stylesheet" href="index.css">
     <body>
+        <img src="https://www.spixii.com/hs-fs/hubfs/Assets_Mar2018/miranda-cover-02.jpg?t=1541693078721&width=1920&name=miranda-cover-02.jpg" alt="Smiley face" height="420" width="700">    
+      <p><h1>Ciao, benvenuto a Miranda</h1></p>
+      <p> <h4>
+        Miranda è uno strumento integrato di chatbot per le agenzie di assicurazione!
+      </h4>
+      </p>
 
-      <p>Welcome to the Chat Application</p>
-
-    <ol id="messages"></ol>
+    <ol id="messages" class="text-center"></ol>
 
       <form id="message-form">
         <input type="text" name="message" placeholder="Message"/>
-        <button>Send</button>
+        <button>Invia</button>
       </form>
-      <button type="button" name="button" id="send-location">Send Location</button>
+      <button type="button" name="button" id="send-location">Invia posizione</button>
+      <hr>
+
+      <p>This Prototype is a product of Miranda. Developed by Alberto M. Chierici & Rahul Tiwari</p>
+      
 
 
       <script type="text/javascript" src="/socket.io/socket.io.js"></script>
       <script src="/js/libs/jquery-3.3.1.min.js"></script>
 
       <script src="/js/index.js"> </script>
+      <script src="index.css"></script>
 
     </body>
   </head>

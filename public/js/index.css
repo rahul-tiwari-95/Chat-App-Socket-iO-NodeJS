@@ -1,0 +1,11 @@
+.text-center {
+    text-align: center;
+}
+ol.text-center {
+    list-style-position: inside;
+    padding-left: inherit; /*Get rid of padding to center correctly*/
+}
+    ol.text-center > li::before {
+        content: "\A";
+        white-space: pre;
+    }

@@ -27,7 +27,7 @@ socket.on('newMessageEvent' , function (messageData){
 
 socket.on('newLocationEvent' , function(locationMessage){
   var li = jQuery('<li></li>');
-  var a = jQuery('<a target="_blank">My Current Location</a> ')
+  var a = jQuery('<a target="_blank">Your Current Location</a> ')
   li.text(`${locationMessage.from}:`);
   a.attr('href' , locationMessage.url);
   li.append(a);
@@ -41,7 +41,7 @@ jQuery('#message-form').on('submit' , function(event){
   event.preventDefault();
 
   socket.emit('createMessageEvent' , {
-    from: 'User 1',
+    from: 'Miranda Customer',
     text: jQuery('[name=message]').val()
   } , (data)=>{
     console.log(data);

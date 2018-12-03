@@ -40,7 +40,7 @@ io.emit('newMessageEvent' , generateMessage(incomingTextMessage.from , incomingT
 
 socket.on("createLocationMessage" ,(incomingGeoData)=>{
   console.log("Location Received " , incomingGeoData);
-  io.emit('newLocationEvent' , generateLocationMessage('CONNECT GOOGLE S5' , incomingGeoData.latitude , incomingGeoData.longitude));
+  io.emit('newLocationEvent' , generateLocationMessage('Miranda fetched your location' , incomingGeoData.latitude , incomingGeoData.longitude));
 
   //comment the geolocation data to
 
@@ -62,7 +62,7 @@ socket.on("createLocationMessage" ,(incomingGeoData)=>{
 
 app.get('/' , (respond , request)=>{
 
-  respond.semd("Hello Express!")
+  respond.send("Hello Express!")
 });
 
 server.listen(port , ()=>{
