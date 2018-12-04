@@ -10,7 +10,7 @@ const publicPath = path.join(__dirname , '../public');
 var app = express();
 var server = http.createServer(app);
 app.use(express.static(publicPath));
-const port = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;
 var io = socketIO(server);
 
 //data added
@@ -65,6 +65,6 @@ app.get('/' , (respond , request)=>{
   respond.send("Hello Express!")
 });
 
-server.listen(port , ()=>{
+server.listen(PORT , ()=>{
   console.log("Server Started");
 });
