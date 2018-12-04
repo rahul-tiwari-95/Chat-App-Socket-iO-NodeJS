@@ -15,5 +15,14 @@
   "dependencies": {
     "express": "^4.16.4",
     "socket.io": "^2.2.0"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rahul-tiwari-95/Chat-App-Socket-iO-NodeJS.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rahul-tiwari-95/Chat-App-Socket-iO-NodeJS/issues"
+  },
+  "homepage": "https://github.com/rahul-tiwari-95/Chat-App-Socket-iO-NodeJS#readme"
 }
