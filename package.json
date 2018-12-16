@@ -14,10 +14,14 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.4",
+    "querystring": "^0.2.0",
     "socket.io": "^2.2.0",
     "websocket": "^1.0.28"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "axios": "^0.18.0",
+    "firebase": "^5.7.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/rahul-tiwari-95/Chat-App-Socket-iO-NodeJS.git"

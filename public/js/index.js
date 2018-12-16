@@ -1,3 +1,10 @@
+
+
+
+const url = 'https://miranda-d1dfc.firebaseio.com/';
+
+
+
 var socket = io();
 
 
@@ -19,10 +26,13 @@ socket.on('disconnect' , function () {
 socket.on('newMessageEvent' , function (messageData){
   console.log("New Message Details: " , messageData);
 
+  
   var li = jQuery('<li></li>');
   li.text(`${messageData.from}: ${messageData.text} `);
 
   jQuery('#messages').append(li);
+
+  axios.post('https://miranda-d1dfc.firebaseio.com/' , messageData)
 })
 
 socket.on('newLocationEvent' , function(locationMessage){
